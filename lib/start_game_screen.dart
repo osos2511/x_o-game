@@ -18,44 +18,46 @@ class _StartGameScreenState extends State<StartGameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Form(
-        key: formKey,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Form(
+          key: formKey,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    flex: 1,
+                    child: Image.asset('assets/images/xo_game.jpg')),
+                Expanded(
                   flex: 1,
-                  child: Image.asset('assets/images/xo_game.jpg')),
-              Expanded(
-                flex: 1,
-                child: Column(
-                  children: [
-                    CustomTextFormField(
-                        controller: player1NameController, labelTxt: 'First Player'),
-                    const SizedBox(height: 12),
-                    CustomTextFormField(
-                        controller: player2NameController, labelTxt: 'Second Player'),
-                    const SizedBox(height: 12),
-
-                    Container(
-                      margin: EdgeInsets.only(top: 30),
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style:ElevatedButton.styleFrom(minimumSize: Size(double.infinity, 60),backgroundColor: Colors.brown),
-                        onPressed: navigate,
-                        child: Text('Start Game',style: TextStyle(fontSize: 18,color: Colors.white),),
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                          controller: player1NameController, labelTxt: 'First Player'),
+                      const SizedBox(height: 12),
+                      CustomTextFormField(
+                          controller: player2NameController, labelTxt: 'Second Player'),
+                      const SizedBox(height: 12),
+      
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style:ElevatedButton.styleFrom(minimumSize: Size(double.infinity, 60),backgroundColor: Colors.brown),
+                          onPressed: navigate,
+                          child: Text('Start Game',style: TextStyle(fontSize: 18,color: Colors.white),),
+                        ),
                       ),
-                    ),
-
-                  ],
+      
+                    ],
+                  ),
                 ),
-              ),
-
-            ],
+      
+              ],
+            ),
           ),
         ),
       ),

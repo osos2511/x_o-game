@@ -11,8 +11,8 @@ String labelTxt;
       validator: (input) {
       if (input == null || input.trim().isEmpty) {
         return 'Please, enter your name';
-      }if(input.trim().length<4){
-        return 'Name, Should be at least 4 chars';
+      }if(input.trim().length<3){
+        return 'Name, Should be at least 3 chars';
       }
       return null;
     },
